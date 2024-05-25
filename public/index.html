@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold mb-4">Chat</h1>
+        <div class="bg-white rounded shadow p-4 mb-4">
+            <ul id="messages" class="list-inside"></ul>
+        </div>
+        <form action="" class="flex">
+            <input id="m" autocomplete="off" class="flex-grow rounded-l shadow p-2 text-sm outline-none focus:outline-none" />
+            <button class="bg-blue-500 text-white rounded-r px-4 py-2">Send</button>
+        </form>
+        <button onclick="location.href='/logout'" type="button" class="bg-red-500 text-white rounded mt-4 px-4 py-2">Logout</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/client.js"></script>
+    <script>
+        const name = '<%= req.session.name %>';
+    </script>
+</body>
+</html>
